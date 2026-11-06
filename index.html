@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="veiwport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Check the weather in any city.">
+<meta name="theme-color" content="#1e3a5f">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<meta name ="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-tile" content="Skycheck">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+     <h1>SKYCHECK</h1>
+<form id="search" role="search" autocomplete="off">
+<input id="q" type="search" placehold="Search for a city..." aria-label="City Name" aria-autocomplete="list" aria-controls="suggestions" required>
+<button type="submit" aria-label="Search">Search</button>
+<button type="button" id="locate" aria-label="Use my location" title="Use my location">&#128205;</button>
+</form>
+<ul id="suggestions" role="listbox"></ul>
+<div class="row">
+     <div class="seg" role="group" aria-labels="Units">
+          <button type="button" data-unit="f" aria-pressed="true">&#176;F</button>
+          <button type="button" data-unit="c" aria-pressed="false">&#176;C</button>
+     </div>
+</div>
+<div id="status" role="status" aria-live="polite">Search for a city to see its weather forecast.</div>
+<div id="offline">You're offline - showing the last saved forecast.</div>
+<section id="result" hidden>
+     <div class="current">
+     <div class="place" id="place"></div>
+     <div class="sub" id="updated"></div>
+     <div class="icon" id="cicon" aria-hidden="true"></div>
+     <div class="temp" id="ctemp"></div>
+     <div class="desc" id="cdesc"></div>
+     </div>
+
+<div class="grid" id="tiles"></div>
+
+<h2>Next 24 Hours</h2>
+<div class="hourly" id="hourly"></div>
+</section>
+
+<button id="install" type="button">Install App</button>
+<footer>Weather data by <a href="https://open-meteo.com" target="_blank" rel="noopener">Open-Meteo</a></footer>
+</main>
+<script src="script.js"></script>
+</body>
+</html>
